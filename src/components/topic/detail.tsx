@@ -64,7 +64,7 @@ const TopicDetailWidget = ({ data }: { data: TopicModel }) => {
           </Button>
           <Button
             onClick={() => {
-              router.push(`/admin?route=topic&id=${data._id}`);
+              router.push(`/?route=topic&id=${data._id}`);
             }}
           >
             Засах

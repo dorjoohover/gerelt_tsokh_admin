@@ -78,7 +78,7 @@ const LegalDetailWidget = ({ data }: { data: LegalModel }) => {
           <Button
             onClick={() => {
               router.push(
-                `/admin?route=legal&name=${data.type}&id=${data._id}`
+                `/?route=legal&name=${data.type}&id=${data._id}`
               );
             }}
           >

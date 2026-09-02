@@ -48,7 +48,7 @@ const SidebarContent = ({ current, setCurrent, ...rest }: SidebarProps) => {
             if (link.links.length > 0) {
               router.push(link.links[0].link[0].value);
             } else {
-              router.push(link.uri ?? "/admin");
+              router.push(link.uri ?? "/");
             }
           }}
           active={current == index}
@@ -62,7 +62,7 @@ const SidebarContent = ({ current, setCurrent, ...rest }: SidebarProps) => {
           w="full"
           onClick={() => {
             deleteCookie("token");
-            router.push("/admin/login");
+            router.push("/login");
           }}
         >
           Гарах
@@ -156,7 +156,7 @@ const NavItem = ({
                 onClick={() => {
                   setCurrent(index);
                   router.push(
-                    l.link.length > 0 ? l.link[0].value : (l.uri ?? "/admin")
+                    l.link.length > 0 ? l.link[0].value : (l.uri ?? "/")
                   );
                 }}
                 key={index}

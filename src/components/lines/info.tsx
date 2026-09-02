@@ -79,7 +79,7 @@ export const TextLine: FC<InfoType> = ({ data }) => {
           <Button onClick={deleteInfo}>Устгах</Button>
           <Button
             onClick={() => {
-              router.push(`/admin?route=info&id=${data._id}`);
+              router.push(`/?route=info&id=${data._id}`);
             }}
           >
             Засах
@@ -173,7 +173,7 @@ export const VoiceLine = ({
             </Button>
             <Button
               onClick={() => {
-                router.push(`/admin?route=info&name=text&id=${data._id}`);
+                router.push(`/?route=info&name=text&id=${data._id}`);
               }}
             >
               Засах

@@ -1,11 +1,9 @@
 "use client";
 
 import "./globals.css";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "@/theme/theme";
 import Fonts from "@/theme/fonts";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Head from "next/head";
 import { imgMiniLogo } from "@/global/assets";
 import { usePathname } from "next/navigation";
@@ -30,22 +28,9 @@ export default function RootLayout({
       <body>
         <ChakraProvider theme={theme}>
           <Fonts />
-          {!pathname.includes("admin") && (
-            <>
-              <Navbar />
-              <Box h={20} />
-            </>
-          )}
           <Suspense fallback={<></>}>
           {children}
           </Suspense>
-
-          {!pathname.includes("admin") && (
-            <>
-              <Box h={10} />
-              <Footer />
-            </>
-          )}
         </ChakraProvider>
       </body>
     </html>

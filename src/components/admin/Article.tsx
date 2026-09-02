@@ -68,7 +68,7 @@ export default function AdminArticle({ route }: { route: { type: string } }) {
   }, []);
   const checker = () => {
     if (token == "" || token == undefined) {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
     const type = route.type.toUpperCase();

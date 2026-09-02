@@ -42,7 +42,7 @@ export default function AdminTopic() {
   }, []);
   const checker = () => {
     if (token == "" || token == undefined) {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
 

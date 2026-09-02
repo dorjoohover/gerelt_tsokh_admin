@@ -39,7 +39,7 @@ export default function HeaderWidget() {
   const router = useRouter();
   const checker = () => {
     if (token == undefined || token == "") {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
     console.log(imgs);

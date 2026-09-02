@@ -151,7 +151,7 @@ export const LineWidgetDetail: FC<LineWidgetDetailType> = ({
           <Button onClick={deleteItem} bg={'red'}>Устгах</Button>
           <Button
             onClick={() => {
-              router.push(`/admin?route=work&name=${type}&id=${id}`);
+              router.push(`/?route=work&name=${type}&id=${id}`);
             }}
           >
             Засах

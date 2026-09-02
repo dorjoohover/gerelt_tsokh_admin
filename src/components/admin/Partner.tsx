@@ -36,7 +36,7 @@ export default function PartnerWidget() {
   const router = useRouter();
   const checker = () => {
     if (token == undefined || token == "") {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
  

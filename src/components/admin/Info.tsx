@@ -59,12 +59,12 @@ const AdminInfo = () => {
   }, [params]);
   const checker = () => {
     if (token == "" || token == undefined) {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
 
     if (params.get("name") == null) {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
 

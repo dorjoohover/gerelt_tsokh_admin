@@ -150,21 +150,21 @@ export const adminNavbarValue = [
     links: [
       {
         title: 'Header',
-        uri: "/admin?route=header",
+        uri: "/?route=header",
         link: [],
       },
       {
         title: "Prototype",
-        uri: "/admin?route=prototype",
+        uri: "/?route=prototype",
         link: [],
       },
       {
         title: "Хамтрагчид",
-        uri: "/admin?route=partner",
+        uri: "/?route=partner",
         link: [],
       },
     ],
-    uri: "/admin",
+    uri: "/",
   },
   {
     title: "Гэрэлт Цох удирдах",
@@ -174,11 +174,11 @@ export const adminNavbarValue = [
         link: [
           {
             name: "Текст мэдээлэл",
-            value: "/admin?route=info&name=text",
+            value: "/?route=info&name=text",
           },
           {
             name: "Дуут мэдээлэл",
-            value: "/admin?route=info&name=voice",
+            value: "/?route=info&name=voice",
           },
         ],
       },
@@ -187,19 +187,19 @@ export const adminNavbarValue = [
         link: [
           {
             name: "Судалгаа",
-            value: "/admin?route=work&name=research",
+            value: "/?route=work&name=research",
           },
           {
             name: "Төсөл",
-            value: "/admin?route=work&name=project",
+            value: "/?route=work&name=project",
           },
           {
             name: "Сургалт ба зөвлөгөө үйлчилгээ",
-            value: "/admin?route=work&name=advice",
+            value: "/?route=work&name=advice",
           },
           {
             name: "Тэтгэлэг ба хандив",
-            value: "/admin?route=work&name=donation",
+            value: "/?route=work&name=donation",
           },
         ],
       },
@@ -208,11 +208,11 @@ export const adminNavbarValue = [
         link: [
           {
             name: "Нийтлэл",
-            value: "/admin?route=article&name=article",
+            value: "/?route=article&name=article",
           },
           {
             name: "Мэдээ",
-            value: "/admin?route=article&name=info",
+            value: "/?route=article&name=info",
           },
         ],
       },
@@ -226,18 +226,18 @@ export const adminNavbarValue = [
         link: [
           {
             name: "Үндсэн мэдээлэл оруулах",
-            value: `/admin?route=performance`,
+            value: `/?route=performance`,
           },
 
           {
             name: "Дэлгэрэнгүй мэдээлэл оруулах",
-            value: `/admin?route=performance&name=custom`,
+            value: `/?route=performance&name=custom`,
           },
         ],
       },
       {
         title: hotTopics,
-        uri: "/admin?route=topic",
+        uri: "/?route=topic",
         link: [],
       },
       {
@@ -245,15 +245,15 @@ export const adminNavbarValue = [
         link: [
           {
             name: "Хууль",
-            value: "/admin?route=legal&name=law",
+            value: "/?route=legal&name=law",
           },
           {
             name: "Тогтоол",
-            value: "/admin?route=legal&name=decree",
+            value: "/?route=legal&name=decree",
           },
           {
             name: "Журам",
-            value: "/admin?route=legal&name=regulation",
+            value: "/?route=legal&name=regulation",
           },
         ],
       },
@@ -262,7 +262,7 @@ export const adminNavbarValue = [
         link: [
           {
             name: feedback,
-            value: "/admin?route=feedback&name=view",
+            value: "/?route=feedback&name=view",
           },
         ],
       },
@@ -271,7 +271,7 @@ export const adminNavbarValue = [
         link: [
           {
             name: contact,
-            value: "/admin?route=contact&name=view",
+            value: "/?route=contact&name=view",
           },
         ],
       },

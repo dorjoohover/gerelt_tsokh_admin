@@ -34,7 +34,7 @@ export default function AdminLoginPage() {
       let data = await res.json();
       if (data["access_token"] != null) {
         setCookie("token", data["access_token"]);
-        router.push('/admin');
+        router.push('/');
       }
     } catch (error) {
       console.log(error);
