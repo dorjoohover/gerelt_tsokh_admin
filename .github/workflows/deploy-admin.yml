@@ -1,0 +1,32 @@
+name: Deploy admin (admin.tokhiruulga.mn)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-admin
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            set -e
+            cd ~/tokhiruulga/admin
+            git fetch origin
+            git checkout main
+            git reset --hard origin/main
+            cd ~/tokhiruulga
+            docker compose build admin
+            docker compose up -d admin
+            docker image prune -f
