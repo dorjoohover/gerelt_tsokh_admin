@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import AdminForm from "./Form";
+import AdminDeleteList from "./DeleteList";
 import { useToast } from "@chakra-ui/react";
 
 import { Messages, api } from "@/values/values";
@@ -107,6 +108,12 @@ export default function AdminTopic() {
   };
 
   return (
+    <>
+    <AdminDeleteList
+      title="Одоо байгаа халуун сэдвүүд"
+      fetchUrl={`${api}topic`}
+      deleteUrl={(id) => `${api}topic/${id}`}
+    />
     <AdminForm
       value={data.title}
       editorText={data.text}
@@ -117,5 +124,6 @@ export default function AdminTopic() {
       text="Гарчиг"
       onSubmit={checker}
     ></AdminForm>
+    </>
   );
 }

@@ -16,6 +16,7 @@ import { getCookie } from "cookies-next";
 import { Messages, api } from "@/values/values";
 import axios from "axios";
 import AdminForm from "./Form";
+import AdminDeleteList from "./DeleteList";
 import Alert from "../Alert";
 import { uploader } from "./Info";
 import { useRouter } from "next/navigation";
@@ -198,6 +199,19 @@ export default function AdminPerformanceCustom() {
     } catch (error) {}
   };
   return (
+    <>
+    <AdminDeleteList
+      title="Одоо байгаа дэлгэрэнгүй өгөгдлүүд"
+      fetchUrl={`${api}medical/detail`}
+      method="get"
+      deleteUrl={(id) => `${api}medical/detail/${id}`}
+    />
+    <AdminDeleteList
+      title="Одоо байгаа багц дэлгэрэнгүйнүүд"
+      fetchUrl={`${api}medical/details`}
+      method="get"
+      deleteUrl={(id) => `${api}medical/details/${id}`}
+    />
     <AdminForm
       value={data.title}
       onTitle={(e) => setData((prev) => ({ ...prev, title: e }))}
@@ -362,5 +376,6 @@ export default function AdminPerformanceCustom() {
         </HStack>
       </VStack>
     </AdminForm>
+    </>
   );
 }

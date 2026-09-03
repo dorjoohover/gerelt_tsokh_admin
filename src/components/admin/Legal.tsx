@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import AdminForm from "./Form";
+import AdminDeleteList from "./DeleteList";
 import { Box, HStack, Input, Text, useToast } from "@chakra-ui/react";
 import { FilterType, filterName } from "@/global/functions";
 import { ArticleTypes, LegalTypes } from "@/global/enum";
@@ -123,6 +124,12 @@ export default function AdminLegal({ route }: { route: { type: string } }) {
   };
 
   return (
+    <>
+    <AdminDeleteList
+      title="Одоо байгаа хуулийн мэдээллүүд"
+      fetchUrl={`${api}legal`}
+      deleteUrl={(id) => `${api}legal/${id}`}
+    />
     <AdminForm
       value={data.title}
       onTitle={(e) => setData((prev) => ({ ...prev, title: e }))}
@@ -136,5 +143,6 @@ export default function AdminLegal({ route }: { route: { type: string } }) {
       onSubmit={checker}
       editorText={data.text}
     ></AdminForm>
+    </>
   );
 }

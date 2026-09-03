@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import AdminForm from "./Form";
+import AdminDeleteList from "./DeleteList";
 import { Box, HStack, Input, Text, useToast } from "@chakra-ui/react";
 import { FilterType, filterName } from "@/global/functions";
 import { Messages, api } from "@/values/values";
@@ -129,6 +130,13 @@ const AdminInfo = () => {
   };
 
   return (
+    <>
+    <AdminDeleteList
+      title="Одоо байгаа мэдээллүүд"
+      fetchUrl={`${api}info`}
+      deleteUrl={(id) => `${api}info/${id}`}
+      getLabel={(it) => `${it.title} (${it.types ?? ""})`}
+    />
     <AdminForm
       value={data.title}
       onTitle={(e) => setData((prev) => ({ ...prev, title: e }))}
@@ -156,6 +164,7 @@ const AdminInfo = () => {
         )}
       </Box>
     </AdminForm>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import AdminForm from "./Form";
+import AdminDeleteList from "./DeleteList";
 import { Box, HStack, Image, Input, Text, useToast } from "@chakra-ui/react";
 import { FilterType, filterName } from "@/global/functions";
 import { ArticleTypes } from "@/global/enum";
@@ -136,6 +137,13 @@ export default function AdminArticle({ route }: { route: { type: string } }) {
   };
 
   return (
+    <>
+    <AdminDeleteList
+      title="Одоо байгаа мэдээ, нийтлэлүүд"
+      fetchUrl={`${api}article`}
+      deleteUrl={(id) => `${api}article/${id}`}
+      getLabel={(it) => `${it.title} (${it.types ?? ""})`}
+    />
     <AdminForm
       onTitle={(e) => setData((prev) => ({ ...prev, title: e }))}
       onChange={(e) => setData((prev) => ({ ...prev, text: e }))}
@@ -181,5 +189,6 @@ export default function AdminArticle({ route }: { route: { type: string } }) {
         </HStack>
       </Box>
     </AdminForm>
+    </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import AdminForm from "./Form";
+import AdminDeleteList from "./DeleteList";
 import {
   Button,
   HStack,
@@ -144,6 +145,12 @@ export default function AdminPerformance() {
     onClose();
   };
   return (
+    <>
+    <AdminDeleteList
+      title="Одоо байгаа гүйцэтгэлийн чадвар алдалтууд"
+      fetchUrl={`${api}medical`}
+      deleteUrl={(id) => `${api}medical/delete/${id}`}
+    />
     <AdminForm
       value={data.title}
       onTitle={(e) => setData((prev) => ({ ...prev, title: e }))}
@@ -371,6 +378,7 @@ export default function AdminPerformance() {
         </Modal>
       </VStack>
     </AdminForm>
+    </>
   );
 }
 export type CustomDetailType = {
